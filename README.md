@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+Hi my name isA Amarjot. I'm excited to work on this project.
 	
 ## Technologies
 Technologies used for this project:

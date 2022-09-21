@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * hi, my name is mylo. i'm excited about this project because i am a magpie who likes gold coins.
+* hi, my name is adam. I'm ecstatic about this project because I am finally doing something I have an interest in. 
 	
 ## Technologies
 Technologies used for this project:

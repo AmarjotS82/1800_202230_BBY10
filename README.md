@@ -5,10 +5,11 @@
 * [Contents](#content)
 
 ## General Info
+
 This browser based web application to ...
 * hi, my name is mylo. i'm excited about this project because i am a magpie who likes gold coins.
 * hi, my name is adam. I'm ecstatic about this project because I am finally doing something I have an interest in. 
-	
+* Hi my name is Amarjot. I'm excited to work on this project.	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS

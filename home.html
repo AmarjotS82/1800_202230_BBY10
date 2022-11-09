@@ -30,6 +30,7 @@
 </head>
 
 <body>
+  <p><a href="profile.html">Profile</a></p>
     <nav id="nav"></nav>
     
     <!-- Search bar-->
@@ -37,81 +38,34 @@
       <input type="text" class="form-control" id="searchBar" placeholder="Search...">
     </div>
     <!-- Cards where information will be-->
-    <div class="card mb-3" style="max-width: 540px; margin: auto;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="./images/placeholder.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
+    <template id="vendorCardTemplate">
+      <div class="card mb-3" style="max-width: 540px; margin: auto; padding: 2%;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="./images/placeholder.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a href="vendor_info_template.html" style="text-decoration: none;color: black;"><h5 class="card-title">Card title</h5></a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
             </div>
           </div>
         </div>
+    </template>
+    <div class="container">
+      <h1 style="margin-left: 40%;margin-bottom: 10%;">Welcome</h1>
+      <!-- Here is container for cards  -->
+      <div class="container">
+          <div id="vendorCardGroup" class="row row-cols-auto"></div>
       </div>
-
-      <div class="card mb-3" style="max-width: 540px;margin: auto;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="./images/placeholder.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" style="max-width: 540px;margin: auto;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="./images/placeholder.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" style="max-width: 540px;margin: auto;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="./images/placeholder.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3" style="max-width: 540px;margin: auto;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="./images/placeholder.png" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    </div>
         
       <footer id="footer"></footer>
     <!-- JavaScript functions -->
-    <script src="./scripts/firebaseAPI_BBY10"></script>
+    <script src="./scripts/firebaseAPI_BBY10.js"></script>
+    <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/home.js"></script>
 
 
 </body>

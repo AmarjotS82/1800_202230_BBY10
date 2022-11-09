@@ -23,9 +23,11 @@ function populateCardsDynamically() {
         .then(allVendors => {
             allVendors.forEach(doc => {
                 var vendorName = doc.data().name; //gets the name field
+                var vendorDescription = doc.data().description; //gets the description field
                 var vendorID = doc.data().code; //gets the unique ID field
                 let testVendorCard = vendorCardTemplate.content.cloneNode(true);
                 testVendorCard.querySelector('.card-title').innerHTML = vendorName;     //equiv getElementByClassName
+                testVendorCard.querySelector('.card-text').innerHTML = vendorDescription;     //equiv getElementByClassName
                 testVendorCard.querySelector('a').onclick = () => setVendorData(vendorID);//equiv getElementByTagName
                 testVendorCard.querySelector('img').src = `./images/${vendorID}.jpg`;   //equiv getElementByTagName
                 vendorCardGroup.appendChild(testVendorCard);

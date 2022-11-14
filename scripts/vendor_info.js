@@ -7,8 +7,6 @@ function displayVendor() {
             // get the documents of query
             var Vendors = queryVendor.docs;
 
-            // We want to have one document per hike, so if the the result of 
-            //the query is more than one, we can check it right now and clean the DB if needed.
             if (size = 1) {
                 var vendor = Vendors[0].data();
                 document.querySelector('.vendor-name').innerHTML = vendor.name;

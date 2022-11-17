@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Info</title>
+    <title>Settings</title>
 
     <!-- Required meta tags -->
 
@@ -32,32 +32,27 @@
 <body>
     <nav id="nav"></nav>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" class="bi bi-arrow-left-short"
-        viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-    </svg>
-
-    <div class="text-center">
-        <img src="./images/placeholder.png" class="img-fluid vendor-thumbnail" alt="...">
+    <h1>Settings</h1>
+    <!--settings and dials-->
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Floob
+      </label>
     </div>
-    <h1 class="text-center vendor-name">Restuarant Name</h1>
-    <div class="d-md-block text-center">
-        <button class="btn btn-dark btn-lg" type="button">Menu</button>
-        <button class="btn btn-dark btn-lg" type="button">Review</button>
-    </div>
-    <div class="vendor-desc text-center">
-        <p>Restuarant description goes here. Serves various foods like burger and sandwich.</p>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <label class="form-check-label" for="flexRadioDefault2">
+        yeah
+      </label>
     </div>
 
-    <!-- <h1 class="text-center">Map</h1>
 
-    <img src="./images/placeholder.png" class="img-fluid" alt="..." width="100%"> -->
+    <nav id="footer"></nav>
 
-    <footer id="footer"></footer>
+
     <!-- JavaScript functions -->
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
-    <script src="./scripts/vendor_info.js"></script>
 
 </body>
 

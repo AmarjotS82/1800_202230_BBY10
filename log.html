@@ -38,9 +38,12 @@
                 <div class="row">
                     <div class="col">
                         <h5 class="card-title">Food Item</h5>
+                        <p class="card-text">Description of food.</p>
                     </div>
                     <div class="col mdl-textfield--align-right">
-                        <p class="card-text">$0.00</p>
+                        
+                        <p class="card-price">$0.00</p>
+                        <p class="card-date">Nov 10th</p>
                     </div>
                 </div>
             </div>
@@ -53,21 +56,13 @@
         </figure>
     </template>
     <!--body content-->
-    <figure class="text-center lead">
-        <p>00/00/0000</p>
-    </figure>
-    <div class="card py-2 mx-2 bg-success">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h5 class="card-title">Food Item</h5>
-                </div>
-                <div class="col mdl-textfield--align-right">
-                    <p class="card-text">$0.00</p>
-                </div>
-            </div>
+    <div class="container">
+        <h1 style="margin-left: 20%;margin-right: 20%;margin-bottom: 10%;">Purchase History</h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="purchaseCardGroup" class="row row-cols-auto"></div>
         </div>
-    </div>
+      </div>
 
 
     <nav id="footer"></nav>
@@ -75,7 +70,7 @@
 
     <!-- JavaScript functions -->
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
-
+    <script src="./scripts/log.js"></script>
 
 </body>
 

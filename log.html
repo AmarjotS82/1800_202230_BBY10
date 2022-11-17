@@ -64,6 +64,31 @@
         </div>
       </div>
 
+      <div class="container">
+        <br>
+        <h1>Write Log</h1>
+        <br>
+        <form>
+            <div class="form-group">
+                <select class="selectpicker form-select" aria-label="Default select example" id="vendor-list">
+                    <option selected value="default">Food Vendor</option>
+                    <template id="vendor-option"><option value="1">template restaurant</option></template>
+                  </select>
+            </div><br>
+            <div class="form-group">
+                <select class="form-select" aria-label="Disabled select example" id="food-list" disabled>
+                    <option selected>Food Item</option>
+                    <template id="food-option" class=""><option value="1">template food</option></template>
+                  </select>
+            </div><br>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg btn-primary pull-right"
+                        onclick="writeLog()">Submit</button>
+                </div>
+        </form>
+
+
+    </div>
 
     <nav id="footer"></nav>
 

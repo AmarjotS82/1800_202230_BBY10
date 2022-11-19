@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Log</title>
+    <title>Map</title>
 
     <!-- Required meta tags -->
 
@@ -25,7 +25,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- CSS linked-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/map.css">
 
 </head>
 
@@ -33,13 +33,23 @@
     <nav id="nav"></nav>
 
     <!--content goes here-->
+    <h1>Map</h1>
+    <div id="map">
+
+
+
+
+    </div>
 
     <nav id="footer"></nav>
 
 
     <!-- JavaScript functions -->
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/map.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2n5hkmdLHJ2tW2szxH71KzKyds7-sA0Q
+        &libraries=visualization&callback=initMap">
+        </script>
 
 </body>
 

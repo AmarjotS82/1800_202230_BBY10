@@ -26,32 +26,43 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> 
 
+    <!--Icon CSS Link-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
-<body>
+<body style="background-color: beige;">
     <div>
         <div class="container">
-            <h1>User Profile </h1>
-            <form>
-                <fieldset class="mb-3" id="personalInfoFields" disabled>
-                    <div class="form-group">
-                        <label >Username</label>
-                        <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label > Old Password</label>
-                        <input type="text" id="schoolInput" class="form-control" placeholder="Confirm your old Password">
-                        <label >New Password</label>
-                        <input type="text" id="schoolInput" class="form-control" placeholder="Enter your New Password">
-                    </div>
-                </fieldset>
-                <div class="d-flex justify-content-end mt-5">
-                    <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-                    <span style="width: 10px"></span>
-                    <button type="button" class="btn btn-info" onclick="saveUserInfo()"> Save</button>
-                </div>
-            </form>
+            <h1 style="margin-left: 30%;">User Profile </h1>
+            </br>
+            <img style="border-radius: 60%;border: solid black 2px;margin-left: 25%;" src="./images/placeholder.jpg" alt="prifilePic">
+            </br>
+            </br>
+            <div id="profile">
+                <a class="btn " role="button" href="profileChanges.html">
+                <i style="float:left;" class="material-icons">edit</i> 
+                Edit Profile</a>
+            </div>
+            
+            <div>
+                <a class="btn " role="button" href="settings.html">
+            <i style="float:left;" class="material-icons">settings</i> 
+            Settings</a>
+            </div>
+
+            <div>
+                <a class="btn btn" role="button" href="contacts.html">
+            <i style="float:left;" class="material-icons">contact_support</i> 
+            Contact Us</a>
+            </div>
+
+            <div>
+                <a class="btn " role="button" href="favouritetest.html">
+            <i style="float:left;" class="material-icons">bookmark</i> 
+            Bookmarks</a>
+            </div>
+            
         </div>
     </div>
 

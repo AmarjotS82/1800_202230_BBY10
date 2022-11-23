@@ -1,35 +1,41 @@
 let map;
 
+//changing later for when adding user icon
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const pos = {
-                    // lat: position.coords.latitude,
-                    // lng: position.coords.longitude,
-                    lat: 49.25195530692527,
-                    lng: -123.00065754018182
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
                 }
-                map.setCenter(pos);
+                console.log(pos)
+                const marker = new google.maps.Marker({
+                    label: "User",
+                    position: pos,
+                    map: map,
+                    // icon: "./images/user_location_icon_small.png",
+                    // scaledSize: {witdh: 10, height: 10}
+                });
             })
     } else {
         console.log("Could not find user location.");
     }
 }
 
+//makes map
 function initMap() {
-    // var bounds = new google.maps.LatLngBounds ([
-    //     {lat: 49.249081968706776, 
-    //     lng: -123.00430334751641}, 
-    //     {lat: 49.25467044955779, 
-    //     lng: -122.99341966307514}
-    //     ]);
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
-            lat: 0, lng: 0,
+            lat: 49.25195530692527,
+            lng: -123.00065754018182
         },
         zoom: 17,
+        heading: 180,
         mapTypeId: 'roadmap',
+        //turns off all icons given by google
+        //clutters screen too much to keep
         styles: [{
             featureType: 'poi',
             stylers: [{
@@ -40,6 +46,7 @@ function initMap() {
         streetViewControl: false,
         disableDefaultUI: false,
         fullscreenControl: false,
+        //sets the bounds for the map panning
         restriction: {
             latLngBounds: {
                 south: 49.249081968706776,
@@ -50,6 +57,7 @@ function initMap() {
         }
 
     });
+    // will be used to get user location later
     getLocation();
     var infoBoxDiv = document.createElement('div');
     var infoBox = new makeInfoBox(infoBoxDiv, map);
@@ -57,7 +65,8 @@ function initMap() {
     makeInfoBox(infoBoxDiv, map);
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(infoBoxDiv);
 
-
+//sets all the markers based on the given geopoint in the database
+//note: marker is not displayed if no geopoint is given
     db.collection("vendors").get()
         .then(allVendors => {
             allVendors.forEach(doc => {
@@ -80,7 +89,8 @@ function initMap() {
 
         })
 }
-
+//i genuinely dont know what this code does and why carly told me to add it.
+//and i dont think she knows either
 function makeInfoBox(controlDiv, map) {
     var controlUI = document.createElement('div');
     controlUI.style.boxShadow = 'rgba(0,0,0,0.298039) 0px 1px 4 px -1px';
@@ -93,7 +103,7 @@ function makeInfoBox(controlDiv, map) {
     controlDiv.appendChild(controlUI);
 
 }
-
+//makes a new marker
 function addMarker(label, coords) {
     const marker = new google.maps.Marker({
         label: label,

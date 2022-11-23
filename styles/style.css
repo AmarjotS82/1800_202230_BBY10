@@ -1,0 +1,28 @@
+body {
+    background-color: #009056;
+}
+
+.btn {
+    background-color: #85e79c;
+    color: #009056;
+    border-color: #009056;
+}
+
+p {
+    color: #1D2951;
+}
+h5 {
+    color: #1D2951;
+}
+
+h1 {
+    text-align: center;
+    color: #DEF8E0;
+}
+
+.card {
+    background-color: white;
+    border-color: #009056;
+    border-width: 4px;
+    display: block;
+}

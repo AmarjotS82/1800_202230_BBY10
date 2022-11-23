@@ -1,28 +1,38 @@
+:root {
+    --background: white;
+    --secondary: #2D9C9C;
+    --sLight: #81e4da;
+    --primary: #178755;
+    --pLight: #a7ebbb;
+}
+
 body {
-    background-color: #009056;
+    background-color: var(--background);
 }
 
 .btn {
-    background-color: #85e79c;
-    color: #009056;
-    border-color: #009056;
+    background-color: var(--primary);
+    color: white;
+    
 }
 
 p {
-    color: #1D2951;
+    color: white;
 }
 h5 {
-    color: #1D2951;
+    color: white;
 }
 
 h1 {
     text-align: center;
-    color: #DEF8E0;
+    color: black;
 }
 
 .card {
-    background-color: white;
-    border-color: #009056;
-    border-width: 4px;
+    background-color: var(--primary);
     display: block;
+}
+
+footer {
+    background-color: var(--secondary);
 }

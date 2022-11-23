@@ -1,0 +1,38 @@
+:root {
+    --background: white;
+    --secondary: #2D9C9C;
+    --sLight: #81e4da;
+    --primary: #178755;
+    --pLight: #a7ebbb;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    
+}
+
+p {
+    color: white;
+}
+h5 {
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.card {
+    background-color: var(--primary);
+    display: block;
+}
+
+footer {
+    background-color: var(--secondary);
+}

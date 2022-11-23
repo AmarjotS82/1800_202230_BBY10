@@ -25,12 +25,38 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- CSS linked-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
     <nav id="nav"></nav>
+<!-- Log input -->
+    <div class="container">
+        <br>
+        <h1>Write Log</h1>
+        <br>
+        <form>
+            <div class="form-group">
+                <select class="selectpicker form-select" aria-label="Default select example" id="vendor-list">
+                    <option selected value="default">Food Vendor</option>
+                    <template id="vendor-option"><option value="1">template restaurant</option></template>
+                  </select>
+            </div><br>
+            <div class="form-group">
+                <select class="form-select" aria-label="Disabled select example" id="food-list" disabled>
+                    <option selected>Food Item</option>
+                    <template id="food-option" class=""><option value="1">template food</option></template>
+                  </select>
+            </div><br>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg btn-primary pull-right"
+                        onclick="writeLog()">Submit</button>
+                </div>
+        </form>
+
+
+    </div>
     <!--purchase card template-->
     <template id="purchaseCardTemplate">
         <div class="card py-2 mx-2 bg-success">
@@ -64,31 +90,7 @@
         </div>
       </div>
 
-      <div class="container">
-        <br>
-        <h1>Write Log</h1>
-        <br>
-        <form>
-            <div class="form-group">
-                <select class="selectpicker form-select" aria-label="Default select example" id="vendor-list">
-                    <option selected value="default">Food Vendor</option>
-                    <template id="vendor-option"><option value="1">template restaurant</option></template>
-                  </select>
-            </div><br>
-            <div class="form-group">
-                <select class="form-select" aria-label="Disabled select example" id="food-list" disabled>
-                    <option selected>Food Item</option>
-                    <template id="food-option" class=""><option value="1">template food</option></template>
-                  </select>
-            </div><br>
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-lg btn-primary pull-right"
-                        onclick="writeLog()">Submit</button>
-                </div>
-        </form>
-
-
-    </div>
+      
 
     <nav id="footer"></nav>
 
@@ -96,6 +98,7 @@
     <!-- JavaScript functions -->
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
     <script src="./scripts/log.js"></script>
+    <script src="./scripts/skeleton.js"></script>
 
 </body>
 

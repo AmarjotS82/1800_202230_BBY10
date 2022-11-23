@@ -42,14 +42,16 @@ function setVendorData(id){
 }
 function saveBookmark(vendorID,user) {
 
-    currentUser.set({
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(vendorID)
-    }, {
-        merge: true
-    })
 
         db.collection("users").doc(user.uid).get()     
         .then(userDoc => {
+
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(vendorID)
+            }, {
+                merge: true
+            })
+            
             var bookmarks = userDoc.data().bookmarks;
             console.log(bookmarks + "initial test"); 
             if (bookmarks.includes(vendorID)) {
@@ -59,11 +61,16 @@ function saveBookmark(vendorID,user) {
                 //this is to change the icon of the hike that was saved to "filled"
                 document.getElementById(iconID).innerText = 'bookmark_border';
                 const index = bookmarks.indexOf(vendorID);
-                if (index > -1) {
+                /* if (index > -1) {
                     console.log("checking array");
                 bookmarks.splice(index, 1);
                 console.log(bookmarks); 
-                }
+                } */
+                currentUser.set({
+                    bookmarks: firebase.firestore.FieldValue.arrayRemove(vendorID)
+                }, {
+                    merge: true
+                })
 
             }
             else{

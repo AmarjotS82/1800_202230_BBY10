@@ -2,13 +2,16 @@
     --background: white;
     --secondary: #2D9C9C;
     --sLight: #81e4da;
+    
     --primary: #178755;
     --pLight: #a7ebbb;
 }
 
 body {
     background-color: var(--background);
+    padding-bottom: 120px;
 }
+
 
 .btn {
     background-color: var(--primary);
@@ -17,10 +20,10 @@ body {
 }
 
 p {
-    color: white;
+    color: black;
 }
 h5 {
-    color: white;
+    color: black;
 }
 
 h1 {
@@ -29,10 +32,34 @@ h1 {
 }
 
 .card {
-    background-color: var(--primary);
-    display: block;
+    background-color: var(--pLight);
 }
+
 
 footer {
     background-color: var(--secondary);
+}
+
+/* vendor styling */
+.vendor-thumbnail {
+    float: left;
+    size: 50%;
+}
+
+#vendor-content {
+    display: grid;
+    grid-template-rows: 40% 1fr;
+    align-items: center;
+    padding: 5%;
+}
+
+.vendor-row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.vendor-description {
+    float: left;
 }

@@ -26,14 +26,14 @@
 
   <!-- CSS linked-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
   <p><a href="home.html">Home</a></p>
   <p><a href="profile.html">Profile</a></p>
-  <p><a href="favourites.html">Favourites</a></p>
+  <p><a href="bookmarks.html">Favourites</a></p>
 
   <nav id="nav"></nav>
 
@@ -41,27 +41,30 @@
   <!-- Cards where information will be-->
   <template id="vendorCardTemplate">
     
-      <div class="card mb-3" style="max-width: 540px; margin: auto; padding: 2%;">
-       <!--  <a href="vendor_info_template.html" style="text-decoration: none;color: black;"> -->
+      <div class="card mb-3" >
+        
         <div class="row g-0">
-                    </div>
+                    
+         
           <div class="col-md-4">
             <img src="./images/placeholder.jpg" class="img-fluid rounded-start" alt="placeholder">
           </div>
           <div class="col-md-8">
+            
             <div class="card-body">
+              <i style="margin-left: 90%" class="material-icons">bookmark</i>
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
                 content. This content is a little bit longer.</p>
             </div>
-
+          </div>
           </div>
         </div>
       </a>
       </div>  
   </template>
   <div class="container">
-    <h1 style="margin-left: 40%;margin-bottom: 10%;">Bookmarks</h1>
+    <h1>Bookmarks</h1>
     <!-- Here is container for cards  -->
     <div class="container">
       <div id="vendorCardGroup" class="row row-cols-auto"></div>
@@ -73,6 +76,8 @@
   <script src="./scripts/firebaseAPI_BBY10.js"></script>
   <script src="./scripts/authentication.js"></script>
   <script src="./scripts/favouriteTest.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+
 
 
 </body>

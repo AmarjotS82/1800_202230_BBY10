@@ -54,18 +54,12 @@ function saveBookmark(vendorID,user) {
             
             var bookmarks = userDoc.data().bookmarks;
             console.log(bookmarks + "initial test"); 
-            if (bookmarks.includes(vendorID)) {
+            if (bookmarks.includes(vendorID) ) {
                 console.log("bookmark has been saved for: " + currentUser);
                 var iconID = 'save-' + vendorID;
                 console.log(iconID);
                 //this is to change the icon of the hike that was saved to "filled"
                 document.getElementById(iconID).innerText = 'bookmark_border';
-                const index = bookmarks.indexOf(vendorID);
-                /* if (index > -1) {
-                    console.log("checking array");
-                bookmarks.splice(index, 1);
-                console.log(bookmarks); 
-                } */
                 currentUser.set({
                     bookmarks: firebase.firestore.FieldValue.arrayRemove(vendorID)
                 }, {

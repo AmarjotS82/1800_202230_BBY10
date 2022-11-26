@@ -24,11 +24,13 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
         <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> 
+        <link rel="stylesheet" href="styles/profileChanges.css">
+
     
     </head>
     <body>
-        <img style="border-radius: 60%;border: solid black 2px;margin-left: 25%;" src="./images/placeholder.jpg" alt="prifilePic">
-        <form style="margin-top: 5%;">
+        <img src="./images/placeholder.jpg" alt="prifilePic">
+        <form >
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
                     <label >Username</label>
@@ -36,13 +38,17 @@
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <button type="button" class="btn btn-warning" onclick="editUserInfo()">Edit</button>
                 <span style="width: 10px"></span>
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()"> Save</button>
             </div>
         </form>
 
+        <footer id="footer"></footer>
+
+
         <script src="./scripts/firebaseAPI_BBY10.js"></script>
     <script src="./scripts/profileChanges.js"></script>
+    <script src="./scripts/skeleton.js"></script>
     </body>
 </html>

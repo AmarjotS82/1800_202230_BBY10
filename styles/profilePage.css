@@ -1,0 +1,42 @@
+:root {
+    --background: white;
+    --secondary: #2D9C9C;
+    --sLight: #81e4da;
+    
+    --primary: #178755;
+    --pLight: #a7ebbb;
+}
+
+body {
+    background-color: var(--background);
+    padding-bottom: 120px;
+}
+
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    margin-bottom: 5%;
+    margin-left: 40%;
+    
+}
+
+p {
+    color: black;
+}
+
+img {
+    border-radius: 50%;
+    border: black;
+    margin-left: 32%;
+}
+h1 {
+    text-align: center;
+    color: black;
+    margin-right: 5%;
+}
+
+
+footer {
+    background-color: var(--secondary);
+}

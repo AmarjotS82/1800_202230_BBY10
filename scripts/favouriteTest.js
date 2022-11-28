@@ -31,9 +31,7 @@ function getBookmarks(user) {
                         var vendorID = doc.code; //gets the unique ID field
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = vendorName;
-                        console.log("before remove")
                         newCard.querySelector('i').onclick = () => removeBookmark(vendorID);
-                        console.log("after remove")
                         //newCard.querySelector('a').onclick = () => setvendorData(vendorID);
                         newCard.querySelector('img').src = `./images/${vendorID}.jpg`;
                         if (bookmarks.includes(vendorID)) {
@@ -78,15 +76,15 @@ function getBookmarks2(user) {
                         console.log("after remove")
                         //newCard.querySelector('a').onclick = () => setvendorData(vendorID);
                         newCard.querySelector('img').src = `./images/${vendorID}.jpg`;
-                        if (bookmarks.includes(vendorID)) {
-                            vendorCardGroup.appendChild(newCard);
-                            vendorCardGroup.style.visibility = 'visible'; 
-                            console.log("visble")
-                        }
-                        else{
-                            vendorCardGroup.style.visibility = 'hidden'; 
-                            console.log("hidden")
-                        }
+                        // if (bookmarks.includes(vendorID)) {
+                        //     vendorCardGroup.appendChild(newCard);
+                        //     vendorCardGroup.style.visibility = 'visible'; 
+                        //     console.log("visble")
+                        // }
+                        // else{
+                        //     vendorCardGroup.style.visibility = 'hidden'; 
+                        //     console.log("hidden")
+                        // }
                         
                         
                     } else {
@@ -116,8 +114,10 @@ function removeBookmark(vendorID){
                         console.log(currentUser); 
                         console.log(user.uid);
                         console.log("remove worked")
-                        vendorCardGroup.style.visibility = 'hidden'; 
-                        getBookmarks2(user);      
+                        // vendorCardGroup.style.visibility = 'hidden'; 
+                        let bookLog = document.getElementById("vendorCardGroup");
+                        bookLog.innerHTML = "";
+                        getBookmarks(user);      
                             
                     }
                 })

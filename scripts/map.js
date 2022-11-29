@@ -1,23 +1,16 @@
 let map;
-
+let pos;
 //changing later for when adding user icon
 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                const pos = {
+                pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                 }
                 console.log(pos)
-                const marker = new google.maps.Marker({
-                    label: "User",
-                    position: pos,
-                    map: map,
-                    // icon: "./images/user_location_icon_small.png",
-                    // scaledSize: {witdh: 10, height: 10}
-                });
             })
     } else {
         console.log("Could not find user location.");
@@ -59,6 +52,13 @@ function initMap() {
     });
     // will be used to get user location later
     getLocation();
+    new google.maps.Marker({
+        label: "User",
+        position: pos,
+        map: map,
+        // icon: "./images/user_location_icon_small.png",
+        // scaledSize: {witdh: 10, height: 10}
+    });
     var infoBoxDiv = document.createElement('div');
     var infoBox = new makeInfoBox(infoBoxDiv, map);
     infoBoxDiv.index = 1;

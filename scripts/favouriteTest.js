@@ -111,10 +111,6 @@ function removeBookmark(vendorID){
                 firebase.auth().onAuthStateChanged(user => {
                     if (user) {
                         currentUser = db.collection("users").doc(user.uid);   //global
-                        console.log(currentUser); 
-                        console.log(user.uid);
-                        console.log("remove worked")
-                        // vendorCardGroup.style.visibility = 'hidden'; 
                         let bookLog = document.getElementById("vendorCardGroup");
                         bookLog.innerHTML = "";
                         getBookmarks(user);      

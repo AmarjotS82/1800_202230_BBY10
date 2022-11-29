@@ -31,7 +31,11 @@ function displayMenu() {
     .then(allFood => {
         allFood.forEach(doc => {
             var foodName = doc.data().name; //gets the name field
-            var foodDescription = doc.data().description; //gets the description field
+            if (doc.description != null) {
+                var foodDescription = doc.description;
+            } else {
+                var foodDescription = " ";
+            }
             var foodID = doc.data().code; //gets the unique ID field
             var foodPrice = doc.data().price;
             let testMenuCard = menuCardTemplate.content.cloneNode(true);

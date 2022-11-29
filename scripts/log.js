@@ -52,11 +52,13 @@ function populateWriteLog() {
 
         })
 }
-$('.selectpicker').change(function () {
-    var selectedItem = $('.selectpicker').val();
+$('.vendorpicker').change(function () {
+    var selectedItem = $('.vendorpicker').val();
 
     let foodOptionTemplate = document.getElementById("food-option");
     let foodList = document.getElementById("food-list");
+    let otherOption = document.getElementById("other-option");
+    otherOption.innerHTML = " ";
 
     if (selectedItem == "default") {
         clearFoodList();
@@ -87,6 +89,13 @@ $('.selectpicker').change(function () {
                             })
 
                         })
+                    let testFoodOption = foodOptionTemplate.content.cloneNode(true);
+                    testFoodOption.querySelector('option').innerHTML = "Other";
+                    testFoodOption.querySelector('option').value = "other";
+                    foodList.appendChild(testFoodOption);
+                    console.log("Other option added")
+
+
                 } else {
                     console.log("Query has more than one data")
                 }
@@ -97,6 +106,16 @@ $('.selectpicker').change(function () {
     }
 });
 
+$('.foodpicker').change(function () {
+    var selectedItem = $('.foodpicker').val();
+    let otherOption = document.getElementById("other-option");
+    if (selectedItem == "other") {
+        let otherOptionTemplate = document.getElementById("other-template").content.cloneNode(true);;
+        otherOption.appendChild(otherOptionTemplate);
+    } else {
+        otherOption.innerHTML = "";
+    }
+});;
 function clearFoodList() {
     //replace html with default
     let foodList = document.getElementById("food-list");
@@ -105,66 +124,83 @@ function clearFoodList() {
 function clearPurchaseLog() {
     //replace log with nothing
     let purchaseLog = document.getElementById("purchaseCardGroup");
-    purchaseLog.innerHTML = "";
+    purchaseLog.innerHTML = " ";
 }
 
 function writeLog() {
     let vendorID = document.getElementById("vendor-list").value;
     let foodID = document.getElementById("food-list").value;
     console.log(vendorID, foodID);
-    //getting vendor collection from ID
-    db.collection("vendors").where("code", "==", vendorID).get()
-        .then(snap => {
-            size = snap.size;
-            queryData = snap.docs;
-
-            if (size = 1) {
-                var vendor = queryData[0].id;
-                var vendorCollection = db.collection("vendors").doc(vendor);
-                //getting food from menu collection
-                vendorCollection.collection("menu").where("name", "==", foodID).get()
-                    .then(snap => {
-                        size = snap.size;
-                        queryData = snap.docs;
-
-                        if (size = 1) {
-                            //get and add data to purchases collection 
-                            let doc = queryData[0].data();
-                            let foodCode = doc.code;
-                            let foodName = doc.name;
-                            let foodPrice = doc.price;
-                            if (doc.description != null) {
-                                var foodDesc = doc.description;
-                            } else {
-                                var foodDesc = " ";
-                            }
-
-                            currentUser.collection("purchases").add({
-                                code: foodCode,
-                                name: foodName,
-                                price: foodPrice,
-                                description: foodDesc,
-                                date: firebase.firestore.FieldValue.serverTimestamp()
-                            }).then(() => {
-                                //refresh log with new info
-                                clearPurchaseLog();
-                                populateCardsDynamically();
-                            })
-                        } else {
-                            console.log("Query has more than one data")
-                        }
-                    })
-                    .catch((error) => {
-                        console.log("Error getting documents: ", error);
-                    });
-            } else {
-                console.log("Query has more than one data")
-            }
+    if (foodID == "other") {
+        let foodCode =  document.getElementById("name").value;
+        let foodName =  document.getElementById("name").value;
+        let foodPrice =  document.getElementById("price").value;
+        let foodDesc = " ";
+        currentUser.collection("purchases").add({
+            code: foodCode,
+            name: foodName,
+            price: foodPrice,
+            description: foodDesc,
+            date: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+            //refresh log with new info
+            clearPurchaseLog();
+            populateCardsDynamically();
         })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
-        });
+    } else {
+        //getting vendor collection from ID
+        db.collection("vendors").where("code", "==", vendorID).get()
+            .then(snap => {
+                size = snap.size;
+                queryData = snap.docs;
 
+                if (size = 1) {
+                    var vendor = queryData[0].id;
+                    var vendorCollection = db.collection("vendors").doc(vendor);
+                    //getting food from menu collection
+                    vendorCollection.collection("menu").where("name", "==", foodID).get()
+                        .then(snap => {
+                            size = snap.size;
+                            queryData = snap.docs;
+
+                            if (size = 1) {
+                                //get and add data to purchases collection 
+                                let doc = queryData[0].data();
+                                let foodCode = doc.code;
+                                let foodName = doc.name;
+                                let foodPrice = doc.price;
+                                if (doc.description != null) {
+                                    var foodDesc = doc.description;
+                                } else {
+                                    var foodDesc = " ";
+                                }
+
+                                currentUser.collection("purchases").add({
+                                    code: foodCode,
+                                    name: foodName,
+                                    price: foodPrice,
+                                    description: foodDesc,
+                                    date: firebase.firestore.FieldValue.serverTimestamp()
+                                }).then(() => {
+                                    //refresh log with new info
+                                    clearPurchaseLog();
+                                    populateCardsDynamically();
+                                })
+                            } else {
+                                console.log("Query has more than one data")
+                            }
+                        })
+                        .catch((error) => {
+                            console.log("Error getting documents: ", error);
+                        });
+                } else {
+                    console.log("Query has more than one data")
+                }
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+    }
 
 }
 populateWriteLog();

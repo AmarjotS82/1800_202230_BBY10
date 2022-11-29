@@ -1,0 +1,39 @@
+:root {
+    --background: white;
+    --secondary: #2D9C9C;
+    --sLight: #81e4da;
+    
+    --primary: #178755;
+    --pLight: #a7ebbb;
+}
+
+body {
+    background-color: var(--background);
+    padding-bottom: 120px;
+}
+
+img{
+    margin-left: 42%;
+    border-radius: 60%;
+    border: solid black 2px;
+}
+footer {
+    background-color: var(--secondary);
+}
+.btn-warning {
+    background-color: var(--primary);
+    color: white;
+    margin-left: 25%;
+    
+    
+}
+.btn-info {
+    background-color: var(--primary);
+    color: white;
+    margin-right: 45%;
+   
+    
+}
+form {
+    margin-top: 5%;
+}

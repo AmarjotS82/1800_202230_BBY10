@@ -39,27 +39,3 @@ h1 {
 footer {
     background-color: var(--secondary);
 }
-
-/* vendor styling */
-.vendor-thumbnail {
-    float: left;
-    size: 50%;
-}
-
-#vendor-content {
-    display: grid;
-    grid-template-rows: 40% 1fr;
-    align-items: center;
-    padding: 5%;
-}
-
-.vendor-row1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-}
-
-.vendor-description {
-    float: left;
-}

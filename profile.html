@@ -25,18 +25,19 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> 
+    <link rel="stylesheet" href="styles/profilePage.css">
 
     <!--Icon CSS Link-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
-<body style="background-color: beige;">
+<body >
     <div>
         <div class="container">
-            <h1 style="margin-left: 30%;">User Profile </h1>
+            <h1>User Profile </h1>
             </br>
-            <img style="border-radius: 60%;border: solid black 2px;margin-left: 25%;" src="./images/placeholder.jpg" alt="prifilePic">
+            <img src="./images/placeholder.jpg" alt="prifilePic">
             </br>
             </br>
             <div id="profile">
@@ -62,9 +63,20 @@
             <i style="float:left;" class="material-icons">bookmark</i> 
             Bookmarks</a>
             </div>
+
+            <div>
+                <a class="btn " role="button" href="log.html">
+            Purchase Log</a>
+            </div>
+
+            <div>
+                <a class="btn " role="button" href="login.html">
+            Log Out</a>
+            </div>
             
         </div>
     </div>
+    <footer id="footer"></footer>
 
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
     <script src="./scripts/profile.js"></script>

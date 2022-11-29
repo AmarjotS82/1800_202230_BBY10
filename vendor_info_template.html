@@ -25,7 +25,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- CSS linked-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 
 </head>
 
@@ -38,48 +38,52 @@
             d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
     </svg>
 
-    <div class="text-center">
-        <img src="./images/placeholder.png" class="img-fluid vendor-thumbnail" alt="...">
-    </div>
-    <h1 class="text-center vendor-name">Restuarant Name</h1>
-    <div class="d-md-block text-center">
-        <button class="btn btn-dark btn-lg" type="button">Review</button>
-    </div>
-    <div class="vendor-desc text-center">
-        <p>Restuarant description goes here. Serves various foods like burger and sandwich.</p>
-    </div>
-
-    <!--menu card template-->
-    <template id="menuCardTemplate">
-        <div class="card py-2 mx-2">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5 class="card-title">Food Item</h5>
-                        <p class="card-text">Description of food.</p>
-                    </div>
-                    <div class="col mdl-textfield--align-right">
-
-                        <p class="card-price">$0.00</p>
-                    </div>
+    <div id="vendor-content">
+        <div class="vendor-row1">
+            <img src="./images/placeholder.png" class="img-fluid vendor-thumbnail" alt="...">
+            <div class="vendor-description">
+                <h1 class="text-center vendor-name">Restuarant Name</h1>
+                <div class="d-md-block text-center">
+                    <button class="btn btn-dark btn-lg" type="button">Review</button>
+                </div>
+                <div class="vendor-desc text-center">
+                    <p>Restuarant description goes here. Serves various foods like burger and sandwich.</p>
                 </div>
             </div>
         </div>
-    </template>
-    <!--body content-->
-    <div class="container">
-        <h1>Menu</h1>
-        <!-- Here is container for cards  -->
-        <div class="container">
-            <div id="menuCardGroup" class="row row-cols-auto"></div>
-        </div>
-    </div>
+        <!--menu card template-->
+        <template id="menuCardTemplate">
+            <div class="card py-2 mx-2 row">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title">Food Item</h5>
+                            <p class="card-text">Description of food.</p>
+                        </div>
+                        <div class="col mdl-textfield--align-right">
 
+                            <p class="card-price">$0.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <!--body content-->
+        <div class="container">
+            <h1>Menu</h1>
+            <!-- Here is container for cards  -->
+            <div class="container">
+                <div id="menuCardGroup" class="row-cols-auto"></div>
+            </div>
+        </div>
+
+    </div>
 
     <footer id="footer"></footer>
     <!-- JavaScript functions -->
     <script src="./scripts/firebaseAPI_BBY10.js"></script>
     <script src="./scripts/vendor_info.js"></script>
+    <script src="./scripts/skeleton.js"></script>
 
 </body>
 

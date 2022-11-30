@@ -31,12 +31,12 @@ function displayMenu() {
     .then(allFood => {
         allFood.forEach(doc => {
             var foodName = doc.data().name; //gets the name field
+            var foodDescription
             if (doc.description != null) {
-                var foodDescription = doc.description;
+                foodDescription = doc.description;
             } else {
-                var foodDescription = " ";
+                foodDescription = " ";
             }
-            var foodID = doc.data().code; //gets the unique ID field
             var foodPrice = doc.data().price;
             let testMenuCard = menuCardTemplate.content.cloneNode(true);
             testMenuCard.querySelector('.card-title').innerHTML = foodName;     //equiv getElementByClassName

@@ -33,6 +33,7 @@ h1 {
 
 .card {
     background-color: var(--pLight);
+    min-width: 100%;
 }
 
 

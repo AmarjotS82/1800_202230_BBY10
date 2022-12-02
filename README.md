@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## CampusCrave
 
 * [General info](#general-info)
 * [Technologies](#technologies)

@@ -4,6 +4,6 @@
 //---------------------------------------------------
 function loadSkeleton(){
     
-    console.log($('#footer').load('./text/footer.html'));
+    console.log($('#footer').load('../text/footer.html'));
 }
 loadSkeleton();  //invoke the function

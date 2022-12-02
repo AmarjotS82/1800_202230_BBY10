@@ -15,7 +15,8 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* Google Maps
+* Firebase
 	
 ## Content
 Content of the project folder:
@@ -24,24 +25,59 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── login.html               # login page
+├── vendor-info-template.html# Template page for vendor information
+└── README.md                # this file
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /account.png     
+    /bookmarks.png  
+    /CampusCrave_Text.png            
+    /CampusCraveLogo.png
+    /home.png  
+    /map.png
+    /placeholder.jpg
+    /pokePlace.jpg
+    /rixCafe.jpg
+    /tim_hortons.jpg
+    /TripleO.jpg
+├── main                     # Navbar pages
+    /bookmarks.html
+    /home.html
+    /map.html
+    /profile.html
+├── profile                  # profile pages
+    /contacts.html
+    /log.html
+    /profile-changes.html
+    /settings.html
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /authentication.js
+    /bookmarks.js
+    /favourites.js
+    /firebaseAPI_BBY10.js
+    /home.js
+    /log.js
+    /map.js
+    /profile-changes.js
+    /skeleton.js
+    /vendor-info.js
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /bookmarks.css
+    /map.css
+    /profilechanges.css
+    /profile-page.css
+    /styles.css
+├── template                 # Folder for template page
+    /template.html
+├── text                     # Folder for nav footer
+    /footer.html
+    
 
 Firebase hosting files: 
 ├── .firebaserc...
 
 
 ```
-
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
-

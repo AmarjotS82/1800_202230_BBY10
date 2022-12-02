@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Settings</title>
+    <title>Map</title>
 
     <!-- Required meta tags -->
 
@@ -25,35 +25,34 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- CSS linked-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/map.css">
+    <link rel="stylesheet" href="../styles/style.css">
 
 </head>
 
 <body>
     <nav id="nav"></nav>
 
-    <h1>Settings</h1>
-    <!--settings and dials-->
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-      <label class="form-check-label" for="flexRadioDefault1">
-        Floob
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-      <label class="form-check-label" for="flexRadioDefault2">
-        yeah
-      </label>
-    </div>
+    <!--content goes here-->
+    <h1>Map</h1>
+    <div id="map">
 
+
+
+
+    </div>
 
     <nav id="footer"></nav>
 
 
     <!-- JavaScript functions -->
-    <script src="./scripts/firebaseAPI_BBY10.js"></script>
-
+    <script src="../scripts/firebaseAPI_BBY10.js"></script>
+    <script src="../scripts/map.js"></script>
+    <script src="../scripts/skeleton.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2n5hkmdLHJ2tW2szxH71KzKyds7-sA0Q
+        &libraries=visualization&callback=initMap">
+        </script>
+    <script src="../scripts/skeleton.js"></script>
 </body>
 
 </html>

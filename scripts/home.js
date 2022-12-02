@@ -27,7 +27,7 @@ function populateCardsDynamically(user) {
                 testVendorCard.querySelector('.card-title').innerHTML = vendorName;     //equiv getElementByClassName
                 testVendorCard.querySelector('.card-text').innerHTML = vendorDescription;     //equiv getElementByClassName
                 testVendorCard.querySelector('a').onclick = () => setVendorData(vendorID);//equiv getElementByTagName
-                testVendorCard.querySelector('img').src = `./images/${vendorID}.jpg`;   //equiv getElementByTagName
+                testVendorCard.querySelector('img').src = `../images/${vendorID}.jpg`;   //equiv getElementByTagName
                 testVendorCard.querySelector('i').id = 'save-' + vendorID;
                 testVendorCard.querySelector('i').onclick = () => saveBookmark(vendorID,user);
                 checkBookmark(vendorID,user);

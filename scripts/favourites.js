@@ -1,4 +1,3 @@
-
 var currentUser;
 
 firebase.auth().onAuthStateChanged(user => {
@@ -38,8 +37,9 @@ function populateCardsDynamically(user) {
         })
 }
 
-
-
+function setVendorData(id){
+    localStorage.setItem ('vendorID', id);
+}
 function saveBookmark(vendorID,user) {
 
 
@@ -92,8 +92,4 @@ function saveBookmark(vendorID,user) {
             })
         }
 
-populateCardsDynamically();
 
-function setVendorData(id){
-    localStorage.setItem ('vendorID', id);
-}

@@ -33,7 +33,7 @@ function getBookmarks(user) {
                         newCard.querySelector('.card-text').innerHTML = vendorDesc;
                         newCard.querySelector('i').onclick = () => removeBookmark(vendorID);
                         newCard.querySelector('a').onclick = () => setData(vendorID);
-                        newCard.querySelector('img').src = `./images/${vendorID}.jpg`;
+                        newCard.querySelector('img').src = `../images/${vendorID}.jpg`;
                         if (bookmarks.includes(vendorID)) {
                             vendorCardGroup.appendChild(newCard);
                         }

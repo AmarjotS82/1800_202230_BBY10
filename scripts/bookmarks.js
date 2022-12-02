@@ -27,8 +27,10 @@ function getBookmarks(user) {
                         var doc = queryData[0].data();
                         var vendorName = doc.name; //gets the name field
                         var vendorID = doc.code; //gets the unique ID field
+                        var vendorDesc = doc.description; //gets the unique ID field
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = vendorName;
+                        newCard.querySelector('.card-text').innerHTML = vendorDesc;
                         newCard.querySelector('i').onclick = () => removeBookmark(vendorID);
                         newCard.querySelector('a').onclick = () => setData(vendorID);
                         newCard.querySelector('img').src = `./images/${vendorID}.jpg`;
